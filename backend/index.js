@@ -4,6 +4,10 @@ const app = express();
 // importing routers 
 
 const userRouter = require('./routers/userRouter');
+const eventRouter = require('./routers/eventRouter');
+const reviewRouter = require('./routers/reviewRouter');
+
+
 const cors = require('cors');
 
 app.use(cors({
@@ -16,6 +20,8 @@ app.use(express.json());
 
 // adding routers
 app.use('/user', userRouter);
+app.use('/event', eventRouter);
+app.use('/review', reviewRouter);
 
 const port = 5000;
 

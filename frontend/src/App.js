@@ -8,18 +8,24 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/main/Navbar';
 import ManageUser from './components/user/ManageUser';
 import Addorganiser from './components/admin/Addorganiser';
+import Admin from './components/admin';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <Toaster position='top-right' />
         <Routes>
           <Route path="/" element={<Navigate to="/main/home" />} />
           <Route path="main" element={<Main />}>
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+          </Route>
+          <Route path="admin" element={<Admin />}>
+            <Route path="addorganizer" element={<Addorganiser />} />
           </Route>
         </Routes>
       </BrowserRouter>

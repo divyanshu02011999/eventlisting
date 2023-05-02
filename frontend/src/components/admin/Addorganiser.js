@@ -1,9 +1,15 @@
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2';
 import * as Yup from 'yup';
-import React from 'react'
+import React, { useState } from 'react'
+import app_config from '../../config';
+import { toast } from 'react-hot-toast';
 
 const Addorganiser = () => {
+
+    const {apiUrl} = app_config;
+
+    const [selImage, setSelImage] = useState(null);
 
     const SignupSchema = Yup.object().shape({
         title: Yup.string()
@@ -14,19 +20,8 @@ const Addorganiser = () => {
             .min(2, 'Too Short!')   
             .max(50, 'Too Long!')
             .required('Required'),
-        cover: Yup.string()
-            .min(2, 'Too Short!')   
-            .max(50, 'Too Long!')   
-            .required('Required'),
-        images: Yup.string()
-            .min(2, 'Too Short!')
-            .max(50, 'Too Long!')
-            .required('Required'),
+        
         description: Yup.string()
-            .min(2, 'Too Short!')
-            .max(50, 'Too Long!')
-            .required('Required'),
-        packages: Yup.string()
             .min(2, 'Too Short!')
             .max(50, 'Too Long!')
             .required('Required'),
@@ -43,9 +38,10 @@ const Addorganiser = () => {
         },
         onSubmit: async ( values, {setSubmitting } ) => {
             // setSubmitting(true);
-            console.log(values);
+            console.log(values);  
+              values.cover = selImage.name;
 
-            const res = await fetch('http://localhost:5000/user/add', {
+            const res = await fetch('http://localhost:5000/event/add', {
                 method: 'POST',
                 body : JSON.stringify(values),
                 headers : {
@@ -64,6 +60,22 @@ const Addorganiser = () => {
         validationSchema: SignupSchema,
     });
 
+    const uploadImage = async (e) => {
+      const file = e.target.files[0];
+      setSelImage(file);
+      const fd = new FormData();
+      fd.append("myfile", file);
+      fetch(apiUrl + "/util/uploadfile", {
+        method: "POST",
+        body: fd,
+      }).then((res) => {
+        if (res.status === 200) {
+          console.log("file uploaded");
+          toast.success("File Uploaded!!");
+        }
+      });
+    }
+
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
     <div className="container h-100">
@@ -74,7 +86,7 @@ const Addorganiser = () => {
               <div className="row justify-content-center">
                 <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                   <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                    Event Listing
+                    Add Event Organizer
                   </p>
                   <form className="mx-1 mx-md-4" onSubmit={signupForm.handleSubmit}>
                     <div className="d-flex flex-row align-items-center mb-4">
@@ -82,7 +94,7 @@ const Addorganiser = () => {
                       <div className=" flex-fill mb-0">
                         <input
                           type="text"
-                          id="name"
+                          id="title"
                           value={signupForm.values.title}
                           onChange={signupForm.handleChange}
                           className="form-control"
@@ -96,7 +108,7 @@ const Addorganiser = () => {
                       <div className=" flex-fill mb-0">
                         <input
                           type="text"
-                          id="name"
+                          id="owner"
                           value={signupForm.values.owner}
                           onChange={signupForm.handleChange}
                           className="form-control"
@@ -105,40 +117,13 @@ const Addorganiser = () => {
                           <span className='text-danger'>{signupForm.errors.owner}</span>
                       </div>
                     </div>
+                   
                     <div className="d-flex flex-row align-items-center mb-4">
                       <i className="fas fa-user fa-lg me-3 fa-fw" />
                       <div className=" flex-fill mb-0">
                         <input
                           type="text"
-                          id="name"
-                          value={signupForm.values.cover}
-                          onChange={signupForm.handleChange}
-                          className="form-control"
-                          placeholder='Cover'
-                        />
-                          <span className='text-danger'>{signupForm.errors.cover}</span> 
-                      </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                      <i className="fas fa-user fa-lg me-3 fa-fw" />
-                      <div className=" flex-fill mb-0">
-                        <input
-                          type="text"
-                          id="name"
-                          value={signupForm.values.images}
-                          onChange={signupForm.handleChange}
-                          className="form-control"
-                          placeholder='Images'
-                        />
-                          <span className='text-danger'>{signupForm.errors.images}</span>
-                      </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                      <i className="fas fa-user fa-lg me-3 fa-fw" />
-                      <div className=" flex-fill mb-0">
-                        <input
-                          type="text"
-                          id="name"
+                          id="description"
                           value={signupForm.values.description}
                           onChange={signupForm.handleChange}
                           className="form-control"
@@ -147,20 +132,9 @@ const Addorganiser = () => {
                           <span className='text-danger'>{signupForm.errors.description}</span>
                       </div>
                     </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                      <i className="fas fa-user fa-lg me-3 fa-fw" />
-                      <div className=" flex-fill mb-0">
-                        <input
-                          type="text"
-                          id="name"
-                          value={signupForm.values.packages}
-                          onChange={signupForm.handleChange}
-                          className="form-control"
-                          placeholder='Packages'
-                        />
-                          <span className='text-danger'>{signupForm.errors.packages}</span>
-                      </div>
-                    </div>
+
+                    <input type="file" onChange={uploadImage} />
+                    
                     <div className="form-check d-flex justify-content-center mb-5">
                       <input
                         className="form-check-input me-2"

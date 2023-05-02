@@ -52,6 +52,11 @@ const Navbar = () => {
               ManageUser
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/addorganiser">
+              Addorganiser
+            </NavLink>
+          </li>
         </ul>
         {/* Left links */}
         <div className="d-flex align-items-center">

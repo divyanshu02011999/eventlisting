@@ -1,12 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Main from "./components/main";
-import Home from "./components/main/Home";
-import Login from "./components/main/Login";
-import Signup from "./components/main/Signup";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/main/Navbar";
-import ManageUser from "./components/user/ManageUser";
+import logo from './logo.svg';
+import './App.css';
+import Main from './components/main';
+import Home from './components/main/Home';
+import Login from './components/main/Login';
+import Signup from './components/main/Signup';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/main/Navbar';
+import ManageUser from './components/user/ManageUser';
+import Addorganiser from './components/admin/Addorganiser';
+
 
 function App() {
   return (

@@ -10,6 +10,7 @@ import ManageUser from './components/user/ManageUser';
 import Addorganiser from './components/admin/Addorganiser';
 import Admin from './components/admin';
 import { Toaster } from 'react-hot-toast';
+import BrowseOrganiser from './components/main/BrowseOrganiser';
 
 
 function App() {
@@ -20,12 +21,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/main/home" />} />
           <Route path="main" element={<Main />}>
+          <Route path="browseorganiser" element={<BrowseOrganiser />} />
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
           </Route>
           <Route path="admin" element={<Admin />}>
             <Route path="addorganizer" element={<Addorganiser />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>

@@ -11,11 +11,8 @@ const Navbar = () => {
       {/* Navbar brand */}
       <a className="navbar-brand me-2" href="https://mdbgo.com/">
         <img
-          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-          height={16}
-          alt="MDB Logo"
-          loading="lazy"
-          style={{ marginTop: "-1px" }}
+          src="https://previews.123rf.com/images/faysalfarhan/faysalfarhan1707/faysalfarhan170701026/81884828-events-calendar-icon-isolated-on-glassy-green-round-button-abstract-illustration.jpg"
+          height={30}
         />
       </a>
       {/* Toggle button */}

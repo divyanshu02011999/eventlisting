@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import app_config from "../../config";
 
 const BrowseOrganiser = () => {
-  return (
-    <section style={{ backgroundColor: "#eee" }}>
-    <div className="container py-5">
-      <div className="row justify-content-center">
-        <div className="col-md-8 col-lg-6 col-xl-4">
+  const { apiUrl } = app_config;
+  const [orgList, setOrgList] = useState([]);
+
+  const getEventData = async () => {
+    const response = await fetch(`${apiUrl}/event/getall`);
+    const data = await response.json();
+    console.log(data);
+    setOrgList(data);
+  };
+
+  useEffect(() => {
+    getEventData();
+  }, []);
+
+  const displayEventList = () => {
+    if (orgList.length) {
+      return orgList.map((item, index) => (
+        <div className="col-md-4 mb-3">
           <div className="card" style={{ borderRadius: 15 }}>
             <div
               className="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
@@ -67,11 +81,19 @@ const BrowseOrganiser = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  )
-}
+      ));
+    } else {
+      return <p>No Data Found</p>;
+    }
+  };
 
-export default BrowseOrganiser
+  return (
+    <section style={{ backgroundColor: "#eee" }}>
+      <div className="container py-5">
+        <div className="row justify-content-center">{displayEventList()}</div>
+      </div>
+    </section>
+  );
+};
+
+export default BrowseOrganiser;

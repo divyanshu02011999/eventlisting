@@ -50,7 +50,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/addorganiser">
+            <NavLink className="nav-link" to="/admin/addorganizer">
               Addorganiser
             </NavLink>
           </li>

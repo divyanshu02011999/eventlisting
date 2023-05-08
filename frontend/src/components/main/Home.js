@@ -49,7 +49,7 @@ const Home = () => {
       {/* Single item */}
       <div className="carousel-item">
         <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
+          src="https://static.startuptalky.com/2022/05/event-listing-portals--3-.jpg"
           className="d-block w-100"
           alt="Canyon at Nigh"
         />

@@ -37,7 +37,7 @@ const Home = () => {
       {/* Single item */}
       <div className="carousel-item active">
         <img
-          src="https://eventbrite-s3.s3.amazonaws.com/marketing/landingpages/assets/2023/loce/event-listings/grow_eventfully.png"
+          src="https://content.jdmagicbox.com/comp/ernakulam/m4/0484px484.x484.140206113128.a9m4/catalogue/we-create-events-panampilly-nagar-ernakulam-event-management-companies-nsobpzm660.jpg"
           className="d-block w-100"
           alt="Sunset Over the City"
         />
@@ -100,7 +100,7 @@ const Home = () => {
   <div className="card">
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img
-      src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+      src="https://uploads-ssl.webflow.com/5ff4e43997c4ec6aa5d646d1/603d547ed5c5fd6365dabbef_industry%20expert%20roundup%20-%20why%20are%20events%20important.png"
       className="img-fluid"
     />
     <a href="#!">
@@ -126,7 +126,7 @@ const Home = () => {
 <div className="card">
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img
-      src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+      src="https://www.specialevents.com/sites/specialevents.com/files/styles/article_featured_retina/public/gallery_promo_image/InVision_Shaklee_Global_Live.jpg?itok=huOoiSZJ"
       className="img-fluid"
     />
     <a href="#!">

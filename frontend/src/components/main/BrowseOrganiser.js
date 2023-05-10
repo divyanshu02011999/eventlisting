@@ -18,7 +18,7 @@ const BrowseOrganiser = () => {
 
   const displayEventList = () => {
     if (orgList.length) {
-      return orgList.map((item, index) => (
+      return orgList.map((Organizer, index) => (
         <div className="col-md-4 mb-3">
           <div className="card" style={{ borderRadius: 15 }}>
             <div
@@ -40,7 +40,7 @@ const BrowseOrganiser = () => {
                 <div>
                   <p>
                     <a href="#!" className="text-dark">
-                      Dell Xtreme 270
+                      {Organizer.title}
                     </a>
                   </p>
                   <p className="small text-muted">Laptops</p>
@@ -75,7 +75,7 @@ const BrowseOrganiser = () => {
                   Cancel
                 </a>
                 <button type="button" className="btn btn-primary">
-                  Buy now
+                  More Details
                 </button>
               </div>
             </div>

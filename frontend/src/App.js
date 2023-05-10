@@ -11,6 +11,7 @@ import Addorganiser from './components/admin/Addorganiser';
 import Admin from './components/admin';
 import { Toaster } from 'react-hot-toast';
 import BrowseOrganiser from './components/main/BrowseOrganiser';
+import Organiserdetail from './components/main/Organiserdetail';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Navigate to="/main/home" />} />
           <Route path="main" element={<Main />}>
           <Route path="browseorganiser" element={<BrowseOrganiser />} />
+            <Route path="organiserdetail" element={<Organiserdetail />} />
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />

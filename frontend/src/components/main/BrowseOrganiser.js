@@ -39,11 +39,11 @@ const BrowseOrganiser = () => {
               <div className="d-flex justify-content-between">
                 <div>
                   <p>
-                    <a href="#!" className="text-dark">
+                    <a href="#!" className="text-dark" style={{ fontWeight: 'bold' }}>
                       {Organizer.title}
                     </a>
                   </p>
-                  <p className="small text-muted">Laptops</p>
+                  <p className="small text-muted">Event</p>
                 </div>
                 <div>
                   <div className="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
@@ -60,13 +60,13 @@ const BrowseOrganiser = () => {
             <div className="card-body pb-0">
               <div className="d-flex justify-content-between">
                 <p>
-                  <a href="#!" className="text-dark">
-                    $3,999
+                  <a href="#!" className="text-dark-bold">
+                   
                   </a>
                 </p>
-                <p className="text-dark">#### 8787</p>
+                <p className="text-dark"></p>
               </div>
-              <p className="small text-muted">VISA Platinum</p>
+              <p className="small text-muted"></p>
             </div>
             <hr className="my-0" />
             <div className="card-body">

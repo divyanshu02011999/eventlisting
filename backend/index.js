@@ -40,4 +40,7 @@ app.get('/add', (req, res) => {
 app.get('/getall', (req, res) => {
     res.send('');
 })
+
+app.use(express.static('./static/uploads'));
+
 app.listen( port, () => { console.log('server started!!');} );

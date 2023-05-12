@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Navigate to="/main/home" />} />
           <Route path="main" element={<Main />}>
           <Route path="browseorganiser" element={<BrowseOrganiser />} />
-            <Route path="organiserdetail" element={<Organiserdetail />} />
+            <Route path="organiserdetail/:id" element={<Organiserdetail />} />
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />

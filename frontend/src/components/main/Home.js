@@ -2,8 +2,12 @@ import React from 'react'
 
 const Home = () => {
   return (
+
+    
     <>
+    
   {/* Carousel wrapper */}
+  
   <div
     id="carouselBasicExample"
     className="carousel slide carousel-fade"
@@ -111,7 +115,33 @@ const Home = () => {
     </a>
   </div>
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
+    <h5 className="card-title">Event1</h5>
+    <p className="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+    <a href="#!" className="btn btn-primary">
+      Button
+    </a>
+  </div>
+</div>
+</div>
+<div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+  <div className="card">
+  <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img
+      src="https://static.toiimg.com/photo/msid-64957021,width-96,height-65.cms"
+      className="img-fluid"
+    />
+    <a href="#!">
+      <div
+        className="mask"
+        style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+      />
+    </a>
+  </div>
+  <div className="card-body">
+    <h5 className="card-title">Event2</h5>
     <p className="card-text">
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
@@ -137,7 +167,7 @@ const Home = () => {
     </a>
   </div>
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
+    <h5 className="card-title">Event3</h5>
     <p className="card-text">
       Some quick example text to build on the card title and make up the bulk of
       the card's content.

@@ -29,7 +29,6 @@ function App() {
           </Route>
           <Route path="admin" element={<Admin />}>
             <Route path="addorganizer" element={<Addorganiser />} />
-            <Route path="addorganizer" element={<Addorganiser />} />
           </Route>
         </Routes>
       </BrowserRouter>

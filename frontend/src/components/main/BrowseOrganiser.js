@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
+import { NavLink } from "react-router-dom";
 
 const BrowseOrganiser = () => {
   const { apiUrl } = app_config;
@@ -74,9 +75,9 @@ const BrowseOrganiser = () => {
                 <a href="#!" className="text-dark fw-bold">
                   Cancel
                 </a>
-                <button type="button" className="btn btn-primary">
+                <NavLink to={'/main/organiserdetail/'+Organizer._id} className="btn btn-primary">
                   More Details
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ Media event, an event created for publicity
 Party, a social, recreational or corporate events held
 Sporting event, at which athletic competition takes place
 Virtual event, a gathering of individuals within a virtual environment</p>
-        <img src="https://www.weddingsutra.com/images/Vendor_Images/Wedding_Planners/Version-Events-and-Weddings/version-events-thumb.jpg"></img>
+        <img src="https://www.weddingsutra.com/images/Vendor_Images/Wedding_Planners/Version-Events-and-Weddings/version-events-thumb.jpgc"></img>
       </center>
     </div>
   );
